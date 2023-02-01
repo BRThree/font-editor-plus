@@ -1,7 +1,7 @@
 <template>
   <el-container class="layout">
     <el-aside v-if="!globalStore.isMobile" width="max-content">
-      <layout-menu></layout-menu>
+      <FontList></FontList>
     </el-aside>
     <el-container>
       <el-header v-if="themeConfig.fixedHeader" class="right-header" height="max-content">
@@ -26,14 +26,14 @@
     direction="ltr"
     @close="() => (themeConfig.menuCollapse = true)"
   >
-    <layout-menu></layout-menu>
+    <FontList></FontList>
   </el-drawer>
   <me-setting v-if="themeConfig.showSetting && !themeConfig.topBar" class="fixed-setting"></me-setting>
   <me-setting-menu></me-setting-menu>
 </template>
 <script setup lang="ts" name="Layout">
 import LayoutHeader from './components/header/index.vue';
-import LayoutMenu from './components/menu/index.vue';
+import FontList from './components/FontList/index.vue';
 import LayoutPage from './components/page.vue';
 import { useSettingStore, useGlobalStore } from '@/store';
 const { themeConfig } = useSettingStore();

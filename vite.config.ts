@@ -44,6 +44,10 @@ export default async (configEnv: ConfigEnv): Promise<UserConfigExport> => {
           find: /@\//,
           replacement: pathResolve('src') + '/',
         },
+        // {
+        //   find: /vue-i18n/,
+        //   replacement: 'vue-i18n/index',
+        // },
       ],
       extensions: ['.mjs', '.js', '.ts', '.jsx', '.tsx', '.json', '.vue'],
     },
